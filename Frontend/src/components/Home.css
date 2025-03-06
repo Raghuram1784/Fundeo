@@ -1,0 +1,144 @@
+.home {
+  min-height: calc(100vh - 64px);
+  background-color: var(--background-color);
+}
+
+.hero {
+  min-height: 60vh;
+  background: var(--hero-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero::before {
+  background: var(--primary-color);
+  top: -200px;
+  right: -200px;
+}
+
+.hero::after {
+  background: var(--secondary-color);
+  bottom: -200px;
+  left: -200px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.features {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.feature-card h2 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .features {
+    padding: 2rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    font-size: 1rem;
+  }
+} 

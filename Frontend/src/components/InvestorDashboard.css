@@ -1,0 +1,328 @@
+.investor-dashboard {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--background-color);
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box h3 {
+  font-size: 1rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.portfolio-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+}
+
+.status-badge.pending {
+  background: rgba(255, 171, 0, 0.1);
+  color: #ffab00;
+}
+
+.investment-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-item span {
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+}
+
+.detail-item p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.3rem;
+}
+
+.return-rate {
+  color: #2ed573 !important;
+}
+
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.view-details-btn,
+.contact-startup-btn,
+.invest-btn,
+.schedule-call-btn,
+.join-btn,
+.reschedule-btn {
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.view-details-btn,
+.schedule-call-btn,
+.reschedule-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.contact-startup-btn,
+.invest-btn,
+.join-btn {
+  background: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+/* Opportunities Section */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.opportunity-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sector-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.opportunity-details {
+  margin: 1rem 0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.detail-row span {
+  color: var(--text-color-light);
+}
+
+.detail-row p {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.deadline {
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+
+/* Meetings Section */
+.meetings-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.meeting-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-info h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+.meeting-type {
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.3rem;
+}
+
+.meeting-datetime {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.meeting-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .investor-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-tabs {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .meeting-card {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .meeting-actions {
+    width: 100%;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+} 
